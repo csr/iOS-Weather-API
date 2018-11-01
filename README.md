@@ -10,3 +10,11 @@ In WeatherAPI.swift change the `getAPIKey()` function so that it looks like this
     }
     
 
+### Contact
+
+Follow and contact me on Twitter. If you find an issue, just open a ticket. Pull requests are warmly welcome as well.
+
+### License
+iOS Weather API App is released under the MIT license. See LICENSE for details.
+
+
