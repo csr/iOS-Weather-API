@@ -48,6 +48,7 @@ extension WeatherController: CLLocationManagerDelegate {
             return
         }
         print("locations count:", locations.count)
+        activityIndicatorView.isHidden = false
         getLocationName(location: location)
     }
     

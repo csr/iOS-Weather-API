@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uR8-H6-WWx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uR8-H6-WWx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,7 +49,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="jf9-yA-9Nz">
-                                <rect key="frame" x="28" y="296" width="319" height="96.5"/>
+                                <rect key="frame" x="28" y="295.5" width="319" height="96.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Services" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICx-ZB-dYt">
                                         <rect key="frame" x="17" y="0.0" width="285" height="26"/>
@@ -133,7 +132,7 @@
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K5q-Rh-NMI">
-                                <rect key="frame" x="160" y="109" width="54" height="74.5"/>
+                                <rect key="frame" x="160.5" y="109" width="54" height="74.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc5-uZ-5Qq">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="45"/>
@@ -149,20 +148,26 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rNv-TC-Z4G">
+                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.060657821595668793" green="0.2176920473575592" blue="0.5299566388130188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Iss-1O-b6c" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5Uh-6r-x7E"/>
+                            <constraint firstItem="rNv-TC-Z4G" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EE7-KJ-SRZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ja8-mx-WFo" secondAttribute="trailing" constant="30" id="ITK-jf-NzL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ja8-mx-WFo" secondAttribute="bottom" constant="30" id="Mq9-R9-wYp"/>
                             <constraint firstItem="ja8-mx-WFo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="XKa-1g-w3w"/>
                             <constraint firstItem="K5q-Rh-NMI" firstAttribute="top" secondItem="Iss-1O-b6c" secondAttribute="bottom" constant="46" id="eyx-27-nh5"/>
                             <constraint firstItem="K5q-Rh-NMI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oNy-JX-FOy"/>
                             <constraint firstItem="Iss-1O-b6c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="soS-Cw-P6Y"/>
+                            <constraint firstItem="rNv-TC-Z4G" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wPw-Jq-JdH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="rNv-TC-Z4G" id="5q6-5u-yZz"/>
                         <outlet property="labelLocation" destination="5JA-a0-Qg6" id="Inr-u8-UKK"/>
                         <outlet property="labelTemperature" destination="uc5-uZ-5Qq" id="yfr-xR-j8X"/>
                         <outlet property="segmentedControlScale" destination="Iss-1O-b6c" id="oWd-bF-5b4"/>

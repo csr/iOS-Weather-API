@@ -16,6 +16,7 @@ class WeatherController: UIViewController {
     @IBOutlet weak var segmentedControlScale: UISegmentedControl!
     @IBOutlet weak var labelTemperature: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class WeatherController: UIViewController {
     func updateUI(weatherData: WeatherData, scale: TemperatureScale) {
         DispatchQueue.main.async {
             self.labelTemperature.text = String(weatherData.main.temp) + " \(scale.symbolForScale())"
+            self.activityIndicatorView.isHidden = true
         }
     }
     
