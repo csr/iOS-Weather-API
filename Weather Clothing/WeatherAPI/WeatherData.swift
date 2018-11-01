@@ -13,10 +13,10 @@ struct WeatherData: Codable {
     
     struct MainData: Codable {
         let temp: Double
-        let pressure: Int
-        let humidity: Float
-        let temp_min: Double
-        let temp_max: Double
+        let pressure: Int?
+        let humidity: Float?
+        let temp_min: Double?
+        let temp_max: Double?
     }
     
     let main: MainData

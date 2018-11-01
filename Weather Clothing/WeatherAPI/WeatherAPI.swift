@@ -13,17 +13,28 @@ class WeatherAPI: NSObject {
     static let shared = WeatherAPI()
     
     func getCurrentWeather(cityName: String, countryCode: String, tempScale: TemperatureScale, completionHandler: @escaping ((WeatherData) -> ())) {
+        
+        guard let sanitizedCityName = cityName.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
+            print("Error: while sanitizing city name")
+            return
+        }
+        
         guard let key = getAPIKey() else {
             print("Error: could not extract API key")
             return
         }
         
         // Set up the URL request
-        let endpointString = "https://api.openweathermap.org/data/2.5/weather?q=\(cityName),\(countryCode)&units=\(tempScale.rawValue)&APPID=\(key)"
+        let endpointString = "https://api.openweathermap.org/data/2.5/weather?q=\(sanitizedCityName),\(countryCode)&units=\(tempScale.rawValue)&APPID=\(key)"
+        
+        print("final request string:", endpointString)
         
         guard let url = URL(string: endpointString) else {
+            print("error: URL NOT valid")
             return
         }
+        
+        print("final request string:", endpointString)
         let urlRequest = URLRequest(url: url)
         
         // Set up the session
@@ -34,8 +45,8 @@ class WeatherAPI: NSObject {
         let task = session.dataTask(with: urlRequest) {
             (data, response, error) in
             // Check for any errors
-            guard error == nil else {
-                print("error calling GET on current weather")
+            if let error = error {
+                print("error calling GET on current weather:", error.localizedDescription)
                 return
             }
             

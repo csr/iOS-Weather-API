@@ -6,4 +6,13 @@
 //  Copyright © 2018 Cesare Gianfilippo Astianatte de Cal. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import MapKit
+
+extension WelcomeController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            presentNextController()
+        }
+    }
+}

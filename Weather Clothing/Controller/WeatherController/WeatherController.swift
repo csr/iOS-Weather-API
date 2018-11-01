@@ -11,41 +11,35 @@ import MapKit
 
 class WeatherController: UIViewController {
 
+    let locationManager = CLLocationManager()
+        
     @IBOutlet weak var segmentedControlScale: UISegmentedControl!
     @IBOutlet weak var labelTemperature: UILabel!
+    @IBOutlet weak var labelLocation: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getWeatherData(scale: .celsius)
+        getCurrentUserLocation()
     }
     
-    func fetchCityAndCountry(from location: CLLocation, completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
-        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
-            completion(placemarks?.first?.locality,
-                       placemarks?.first?.country,
-                       error)
-        }
-    }
-    func getWeatherData(scale: TemperatureScale) {
-        WeatherAPI.shared.getCurrentWeather(cityName: "Milan", countryCode: "IT", tempScale: scale) { (data) in
+    func getWeatherData(cityName: String, countryCode: String, scale: TemperatureScale) {
+        WeatherAPI.shared.getCurrentWeather(cityName: cityName, countryCode: countryCode, tempScale: scale) { (data) in
             self.updateUI(weatherData: data, scale: scale)
         }
     }
     
     func updateUI(weatherData: WeatherData, scale: TemperatureScale) {
         DispatchQueue.main.async {
-            self.labelTemperature.text = String(weatherData.main.temp_max) + " \(scale.symbolForScale())"
+            self.labelTemperature.text = String(weatherData.main.temp) + " \(scale.symbolForScale())"
         }
     }
     
     @IBAction func didTapRefreshButton(_ sender: UIButton) {
-        let currentScaleTemp = getCurrentTemperatureScaleSelection()
-        getWeatherData(scale: currentScaleTemp)
+        locationManager.requestLocation()
     }
     
     @IBAction func didChangeSegmentedControlValue(_ sender: UISegmentedControl) {
-        let scaleTemp = getCurrentTemperatureScaleSelection()
-        getWeatherData(scale: scaleTemp)
+        locationManager.requestLocation()
     }
     
     func getCurrentTemperatureScaleSelection() -> TemperatureScale {
