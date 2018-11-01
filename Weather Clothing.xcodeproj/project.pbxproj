@@ -12,6 +12,10 @@
 		1DBAB905218B4C88008DAAE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DBAB903218B4C88008DAAE0 /* Main.storyboard */; };
 		1DBAB907218B4C8C008DAAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DBAB906218B4C8C008DAAE0 /* Assets.xcassets */; };
 		1DBAB90A218B4C8C008DAAE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DBAB908218B4C8C008DAAE0 /* LaunchScreen.storyboard */; };
+		1DBAB913218B5484008DAAE0 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAB912218B5484008DAAE0 /* WeatherAPI.swift */; };
+		1DBAB916218B5507008DAAE0 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAB915218B5507008DAAE0 /* WeatherData.swift */; };
+		1DBAB918218B59BF008DAAE0 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DBAB917218B59BF008DAAE0 /* Keys.plist */; };
+		1DBAB91A218B5F96008DAAE0 /* TemperatureScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAB919218B5F96008DAAE0 /* TemperatureScale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		1DBAB906218B4C8C008DAAE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DBAB909218B4C8C008DAAE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DBAB90B218B4C8C008DAAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DBAB912218B5484008DAAE0 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		1DBAB915218B5507008DAAE0 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		1DBAB917218B59BF008DAAE0 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		1DBAB919218B5F96008DAAE0 /* TemperatureScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,33 @@
 			isa = PBXGroup;
 			children = (
 				1DBAB8FF218B4C88008DAAE0 /* AppDelegate.swift */,
-				1DBAB901218B4C88008DAAE0 /* ViewController.swift */,
+				1DBAB914218B548B008DAAE0 /* WeatherAPI */,
+				1DBAB911218B5255008DAAE0 /* Controller */,
 				1DBAB903218B4C88008DAAE0 /* Main.storyboard */,
 				1DBAB906218B4C8C008DAAE0 /* Assets.xcassets */,
 				1DBAB908218B4C8C008DAAE0 /* LaunchScreen.storyboard */,
 				1DBAB90B218B4C8C008DAAE0 /* Info.plist */,
+				1DBAB917218B59BF008DAAE0 /* Keys.plist */,
 			);
 			path = "Weather Clothing";
+			sourceTree = "<group>";
+		};
+		1DBAB911218B5255008DAAE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1DBAB901218B4C88008DAAE0 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DBAB914218B548B008DAAE0 /* WeatherAPI */ = {
+			isa = PBXGroup;
+			children = (
+				1DBAB912218B5484008DAAE0 /* WeatherAPI.swift */,
+				1DBAB919218B5F96008DAAE0 /* TemperatureScale.swift */,
+				1DBAB915218B5507008DAAE0 /* WeatherData.swift */,
+			);
+			path = WeatherAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DBAB918218B59BF008DAAE0 /* Keys.plist in Resources */,
 				1DBAB90A218B4C8C008DAAE0 /* LaunchScreen.storyboard in Resources */,
 				1DBAB907218B4C8C008DAAE0 /* Assets.xcassets in Resources */,
 				1DBAB905218B4C88008DAAE0 /* Main.storyboard in Resources */,
@@ -135,7 +164,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DBAB913218B5484008DAAE0 /* WeatherAPI.swift in Sources */,
 				1DBAB902218B4C88008DAAE0 /* ViewController.swift in Sources */,
+				1DBAB916218B5507008DAAE0 /* WeatherData.swift in Sources */,
+				1DBAB91A218B5F96008DAAE0 /* TemperatureScale.swift in Sources */,
 				1DBAB900218B4C88008DAAE0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
