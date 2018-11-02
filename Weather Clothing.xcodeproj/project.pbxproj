@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D88D05D218BABBB00CAC9EF /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D88D05C218BABBB00CAC9EF /* CustomCell.xib */; };
+		1D88D060218BAC6000CAC9EF /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D88D05F218BAC6000CAC9EF /* CustomCell.swift */; };
+		1D9AD91B218BA3F6005260E6 /* WeatherController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD91A218BA3F6005260E6 /* WeatherController+CollectionView.swift */; };
 		1DBAB900218B4C88008DAAE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAB8FF218B4C88008DAAE0 /* AppDelegate.swift */; };
 		1DBAB902218B4C88008DAAE0 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAB901218B4C88008DAAE0 /* WeatherController.swift */; };
 		1DBAB905218B4C88008DAAE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DBAB903218B4C88008DAAE0 /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D88D05C218BABBB00CAC9EF /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		1D88D05F218BAC6000CAC9EF /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		1D9AD91A218BA3F6005260E6 /* WeatherController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherController+CollectionView.swift"; sourceTree = "<group>"; };
 		1DBAB8FC218B4C88008DAAE0 /* Weather Clothing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Clothing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DBAB8FF218B4C88008DAAE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DBAB901218B4C88008DAAE0 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
@@ -55,6 +61,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D88D05E218BABE000CAC9EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DBAB903218B4C88008DAAE0 /* Main.storyboard */,
+				1D88D061218BAC6900CAC9EF /* CustomCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D88D061218BAC6900CAC9EF /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				1D88D05C218BABBB00CAC9EF /* CustomCell.xib */,
+				1D88D05F218BAC6000CAC9EF /* CustomCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		1DBAB8F3218B4C88008DAAE0 = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +101,7 @@
 				1DBAB8FF218B4C88008DAAE0 /* AppDelegate.swift */,
 				1DBAB914218B548B008DAAE0 /* WeatherAPI */,
 				1DBAB911218B5255008DAAE0 /* Controller */,
-				1DBAB903218B4C88008DAAE0 /* Main.storyboard */,
+				1D88D05E218BABE000CAC9EF /* View */,
 				1DBAB906218B4C8C008DAAE0 /* Assets.xcassets */,
 				1DBAB908218B4C8C008DAAE0 /* LaunchScreen.storyboard */,
 				1DBAB91D218B7409008DAAE0 /* Fonts */,
@@ -121,6 +145,7 @@
 			children = (
 				1DBAB901218B4C88008DAAE0 /* WeatherController.swift */,
 				1DBAB926218B7FE2008DAAE0 /* WeatherController-MapKit.swift */,
+				1D9AD91A218BA3F6005260E6 /* WeatherController+CollectionView.swift */,
 			);
 			path = WeatherController;
 			sourceTree = "<group>";
@@ -195,6 +220,7 @@
 			files = (
 				1DBAB921218B7429008DAAE0 /* Soleil-Regular.ttf in Resources */,
 				1DBAB918218B59BF008DAAE0 /* Keys.plist in Resources */,
+				1D88D05D218BABBB00CAC9EF /* CustomCell.xib in Resources */,
 				1DBAB90A218B4C8C008DAAE0 /* LaunchScreen.storyboard in Resources */,
 				1DBAB907218B4C8C008DAAE0 /* Assets.xcassets in Resources */,
 				1DBAB905218B4C88008DAAE0 /* Main.storyboard in Resources */,
@@ -212,12 +238,14 @@
 			files = (
 				1DBAB927218B7FE2008DAAE0 /* WeatherController-MapKit.swift in Sources */,
 				1DBAB925218B7B26008DAAE0 /* WelcomeController.swift in Sources */,
+				1D88D060218BAC6000CAC9EF /* CustomCell.swift in Sources */,
 				1DBAB913218B5484008DAAE0 /* WeatherAPI.swift in Sources */,
 				1DBAB902218B4C88008DAAE0 /* WeatherController.swift in Sources */,
 				1DBAB916218B5507008DAAE0 /* WeatherData.swift in Sources */,
 				1DBAB92B218B8529008DAAE0 /* WelcomeController+MapKitDelegate.swift in Sources */,
 				1DBAB91A218B5F96008DAAE0 /* TemperatureScale.swift in Sources */,
 				1DBAB900218B4C88008DAAE0 /* AppDelegate.swift in Sources */,
+				1D9AD91B218BA3F6005260E6 /* WeatherController+CollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

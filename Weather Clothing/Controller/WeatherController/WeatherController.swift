@@ -17,9 +17,12 @@ class WeatherController: UIViewController {
     @IBOutlet weak var labelTemperature: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
         getCurrentUserLocation()
     }
     
@@ -51,7 +54,7 @@ class WeatherController: UIViewController {
         case 1:
             return .fahrenheit
         default:
-            fatalError()
+            return .kelvin
         }
     }
     

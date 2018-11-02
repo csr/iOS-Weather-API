@@ -10,4 +10,9 @@ import UIKit
 
 class CustomCell: UICollectionViewCell {
     
+    static let identifier = "CustomCell"
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }
