@@ -21,20 +21,33 @@
             <rect key="frame" x="0.0" y="0.0" width="346" height="324"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, there!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EK2-YG-fnh">
-                    <rect key="frame" x="125" y="152" width="96.5" height="20"/>
-                    <fontDescription key="fontDescription" name="Soleil-Regular" family="Soleil" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8ua-HT-Mrm">
+                    <rect key="frame" x="0.0" y="0.0" width="346" height="324"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hello, there!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EK2-YG-fnh">
+                            <rect key="frame" x="125" y="0.0" width="96.5" height="19.5"/>
+                            <fontDescription key="fontDescription" name="Soleil-Regular" family="Soleil" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="yellow-jacket" translatesAutoresizingMaskIntoConstraints="NO" id="CM1-T0-Sdo">
+                            <rect key="frame" x="0.0" y="39.5" width="346" height="284.5"/>
+                        </imageView>
+                    </subviews>
+                </stackView>
             </subviews>
             <constraints>
-                <constraint firstItem="EK2-YG-fnh" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="FEH-Cn-e5e"/>
-                <constraint firstItem="EK2-YG-fnh" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="FsN-YM-Ia3"/>
+                <constraint firstItem="8ua-HT-Mrm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7Qc-Bp-4KZ"/>
+                <constraint firstItem="8ua-HT-Mrm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="S2f-Sq-viv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8ua-HT-Mrm" secondAttribute="bottom" id="SJl-vv-C9q"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8ua-HT-Mrm" secondAttribute="trailing" id="XLY-c2-3zo"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="115.2" y="-0.89955022488755632"/>
         </view>
     </objects>
+    <resources>
+        <image name="yellow-jacket" width="1000" height="1000"/>
+    </resources>
 </document>
