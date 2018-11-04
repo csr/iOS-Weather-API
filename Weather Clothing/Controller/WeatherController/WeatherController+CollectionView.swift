@@ -11,12 +11,17 @@ import UIKit
 extension WeatherController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.identifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell else {
+            return UICollectionViewCell()
+        }
+        cell.weatherData = weatherData
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        let numberOfItems = 1
+        pageControl.numberOfPages = numberOfItems
+        return numberOfItems
     }
     
     func setupCollectionView() {

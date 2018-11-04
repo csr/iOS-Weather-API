@@ -15,7 +15,7 @@ class WelcomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
+        locationManager.delegate = self        
     }
     
     func presentNextController() {
@@ -26,7 +26,7 @@ class WelcomeController: UIViewController {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
     }
-    
+        
     @IBAction func didTapAcceptButton(_ sender: UIButton) {
         requestLocationPermissions()
     }

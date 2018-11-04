@@ -12,11 +12,12 @@ import MapKit
 class WeatherController: UIViewController {
 
     let locationManager = CLLocationManager()
+    
+    var weatherData: WeatherData?
         
-    @IBOutlet weak var segmentedControlScale: UISegmentedControl!
+//    @IBOutlet weak var segmentedControlScale: UISegmentedControl!
     @IBOutlet weak var labelTemperature: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
-//    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -24,6 +25,8 @@ class WeatherController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         getCurrentUserLocation()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(presentSettingsController))
     }
     
     func getWeatherData(cityName: String, countryCode: String, scale: TemperatureScale) {
@@ -35,27 +38,36 @@ class WeatherController: UIViewController {
     func updateUI(weatherData: WeatherData, scale: TemperatureScale) {
         DispatchQueue.main.async {
             self.labelTemperature.text = String(weatherData.main.temp) + " \(scale.symbolForScale())"
-//            self.activityIndicatorView.isHidden = true
+            self.weatherData = weatherData
+            self.collectionView.reloadData()
         }
     }
     
     @IBAction func didTapRefreshButton(_ sender: UIButton) {
         locationManager.requestLocation()
     }
-    
+        
     @IBAction func didChangeSegmentedControlValue(_ sender: UISegmentedControl) {
         locationManager.requestLocation()
     }
     
     func getCurrentTemperatureScaleSelection() -> TemperatureScale {
-        switch segmentedControlScale.selectedSegmentIndex {
-        case 0:
-            return .celsius
-        case 1:
-            return .fahrenheit
-        default:
-            return .kelvin
-        }
+        return .celsius
+
+//        switch segmentedControlScale.selectedSegmentIndex {
+//        case 0:
+//            return .celsius
+//        case 1:
+//            return .fahrenheit
+//        default:
+//            return .kelvin
+//        }
+    }
+    
+    @objc func presentSettingsController() {
+        print("didTapSettingsButton")
+        let navVC = UINavigationController(rootViewController: SettingsController())
+        present(navVC, animated: true, completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -19,5 +19,13 @@ struct WeatherData: Codable {
         let temp_max: Double?
     }
     
+    struct WeatherConditions: Codable {
+        let id: Int
+        let main: String
+        let description: String
+        let icon: String
+    }
+    
     let main: MainData
+    let weather: [WeatherConditions]
 }

@@ -80,13 +80,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2DK-OK-5gP"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hpK-GY-Pcz">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Qo4-86-fzt"/>
+                    </navigationItem>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="weatherControllerSegue" id="feS-iD-4R4"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="weatherControllerSegue" id="bbR-XU-Iyd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doi-6V-pJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530" y="134"/>
+            <point key="canvasLocation" x="2370" y="134"/>
         </scene>
         <!--Weather Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -99,43 +102,45 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="51F-kg-Pji">
                                 <rect key="frame" x="0.0" y="50" width="375" height="587"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Iss-1O-b6c">
-                                        <rect key="frame" x="30" y="0.0" width="315" height="29"/>
-                                        <segments>
-                                            <segment title="℃"/>
-                                            <segment title="℉"/>
-                                        </segments>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="didChangeSegmentedControlValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="HJ3-zY-9H9"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K5q-Rh-NMI">
-                                        <rect key="frame" x="157" y="48.5" width="61" height="85.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="K5q-Rh-NMI">
+                                        <rect key="frame" x="160.5" y="0.0" width="54" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc5-uZ-5Qq">
-                                                <rect key="frame" x="0.0" y="0.0" width="61" height="50.5"/>
-                                                <fontDescription key="fontDescription" name="Soleil-Bold" family="Soleil" pointSize="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="54" height="45"/>
+                                                <fontDescription key="fontDescription" name="Soleil-Bold" family="Soleil" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JA-a0-Qg6">
-                                                <rect key="frame" x="24.5" y="60.5" width="12.5" height="25"/>
-                                                <fontDescription key="fontDescription" name="Soleil-Regular" family="Soleil" pointSize="22"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NFe-fN-9Sr">
+                                                <rect key="frame" x="5.5" y="52" width="43.5" height="20"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="DAA-gi-1NH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="21" height="20"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="fmK-qF-AeI"/>
+                                                            <constraint firstAttribute="width" secondItem="DAA-gi-1NH" secondAttribute="height" multiplier="1:1" constant="1" id="mup-ms-htC"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JA-a0-Qg6">
+                                                        <rect key="frame" x="31" y="0.0" width="12.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Soleil-Regular" family="Soleil" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bF3-Fh-nH7">
-                                        <rect key="frame" x="0.0" y="154.5" width="375" height="352"/>
+                                        <rect key="frame" x="0.0" y="118" width="375" height="363"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CZP-rY-RfN">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="311"/>
                                                 <color key="backgroundColor" red="0.060657821600000002" green="0.2176920474" blue="0.52995663879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="CZP-rY-RfN" secondAttribute="height" multiplier="1:0.8" id="2m1-mY-I9z"/>
+                                                    <constraint firstAttribute="width" secondItem="CZP-rY-RfN" secondAttribute="height" multiplier="1:0.83" id="2m1-mY-I9z"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pVB-Ff-VHw">
                                                     <size key="itemSize" width="374" height="239.5"/>
@@ -145,7 +150,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="DQw-Ye-KHp">
-                                                        <rect key="frame" x="0.0" y="30.5" width="374" height="239.5"/>
+                                                        <rect key="frame" x="0.0" y="36" width="374" height="239.5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="239.5"/>
@@ -155,7 +160,7 @@
                                                 </cells>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lf6-J6-Q2c">
-                                                <rect key="frame" x="0.0" y="315" width="375" height="37"/>
+                                                <rect key="frame" x="0.0" y="326" width="375" height="37"/>
                                             </pageControl>
                                         </subviews>
                                     </stackView>
@@ -191,21 +196,23 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="51F-kg-Pji" secondAttribute="bottom" constant="30" id="EEE-9J-wy4"/>
                             <constraint firstItem="51F-kg-Pji" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iq7-QE-dkx"/>
                             <constraint firstAttribute="trailing" secondItem="51F-kg-Pji" secondAttribute="trailing" id="MHI-S5-Szt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iss-1O-b6c" secondAttribute="trailing" constant="30" id="XCZ-oH-IqO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Kqr-Jm-ixX"/>
                     <connections>
                         <outlet property="collectionView" destination="CZP-rY-RfN" id="CJb-Dr-Cvj"/>
                         <outlet property="labelLocation" destination="5JA-a0-Qg6" id="Inr-u8-UKK"/>
                         <outlet property="labelTemperature" destination="uc5-uZ-5Qq" id="yfr-xR-j8X"/>
                         <outlet property="pageControl" destination="Lf6-J6-Q2c" id="c1w-Rb-OjM"/>
-                        <outlet property="segmentedControlScale" destination="Iss-1O-b6c" id="oWd-bF-5b4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="133.5832083958021"/>
+            <point key="canvasLocation" x="3089" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location-icon" width="30" height="30"/>
+    </resources>
 </document>
