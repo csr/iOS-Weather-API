@@ -1,20 +1,16 @@
 PODS:
-  - AloeStackView (1.0.1)
   - Eureka (4.3.0)
 
 DEPENDENCIES:
-  - AloeStackView
   - Eureka
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - AloeStackView
     - Eureka
 
 SPEC CHECKSUMS:
-  AloeStackView: d22c006da4510db5e220968234174654b5ed6ea5
   Eureka: 6d711cb30ca333b4bc893110285a722ae3840114
 
-PODFILE CHECKSUM: d30d708ff4c4a6c16475749a8114ecef7635659b
+PODFILE CHECKSUM: ab29028b44c4cb674783eebc4258774e3198901f
 
 COCOAPODS: 1.5.3
